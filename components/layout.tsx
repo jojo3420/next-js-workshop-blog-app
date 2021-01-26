@@ -1,4 +1,4 @@
-import Head from 'next/Head'
+import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from "next/link"
@@ -6,11 +6,15 @@ import Link from "next/link"
 const username = 'jojo'
 export const siteTitle = 'Next.js sample website'
 
-function Layout({children, home, title}) {
+export default function Layout({children, home, title}: {
+  children: React.ReactNode,
+  home?: boolean,
+  title?: string,
+}) {
   return (
     <div className={styles.container}>
       <Head>
-        {title&& <title>{title}</title>}
+        {title && <title>{title}</title>}
         <link rel="icon" href="favicon.ico"/>
         <meta name="description"
               content="Learn how to build a personal website using Next.js"
@@ -65,4 +69,3 @@ function Layout({children, home, title}) {
   );
 }
 
-export default Layout;

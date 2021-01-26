@@ -2,7 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Layout from "../../components/layout";
 
-function FirstPost(props) {
+function FirstPost() {
   return (
     <Layout>
       <Head>
