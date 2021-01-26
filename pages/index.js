@@ -5,7 +5,8 @@ import Alert from "../components/alert";
 import { getSortedPostsData } from "../lib/posts";
 // import axios from 'axios';
 import Link from 'next/link'
-import date from '../components/date'
+import Date from '../components/date'
+
 
 
 //1. 정적 생성(static generation): 사전 렌더링
@@ -76,12 +77,14 @@ export default function Home({allPostsData}) {
               </Link>
               <br/>
               <small className={utilsStyles.lightText}>
-                {date}
+                <Date dateString={date} />
               </small>
             </li>
           ))}
         </ul>
-
+        <small>
+          {process.env.NEXT_PUBLIC_ANALYTICS_ID}
+        </small>
       </section>
     </Layout>
   )

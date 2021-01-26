@@ -14,8 +14,10 @@ export default function handler(req, res){
 
   // const email = req.body.email ;
   // The Save email to your database, etc
+  const { DB_HOST, DB_USER, DB_PASSWORD } = process.env;
 
-  res.status(200).json({ text: 'hello', data: getData() })
+
+  res.status(200).json({ text: 'hello', data: getData(), info: {DB_USER, DB_HOST, DB_PASSWORD} })
 
 
 
